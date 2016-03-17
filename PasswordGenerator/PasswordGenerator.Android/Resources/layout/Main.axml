@@ -1,13 +1,192 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    >
-<Button  
-    android:id="@+id/MyButton"
-    android:layout_width="fill_parent" 
-    android:layout_height="wrap_content" 
-    android:text="@string/Hello"
-    />
-</LinearLayout>
+    android:background="#FFFFFF">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:id="@+id/lyt1"
+        android:layout_centerInParent="false"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp">
+        <TextView
+            android:text="Keywords:"
+            android:layout_width="120.0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/textView1"
+            android:gravity="center_vertical"
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            android:layout_margin="2dp"
+            android:padding="2dp" />
+        <TextView
+            android:text="Medium Text"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/textView2"
+            android:textSize="14dp"
+            android:inputType="text"
+            android:layout_margin="2dp"
+            android:gravity="center"
+            android:password="true"
+            android:textColor="@color/black" />
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:id="@+id/lyt2"
+        android:layout_below="@id/lyt1"
+        android:layout_marginTop="10dp">
+        <TextView
+            android:text="Password length:"
+            android:layout_width="120.0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/textView3"
+            android:textSize="14dp"
+            android:textColor="@color/black"
+            android:gravity="center_vertical"
+            android:layout_margin="2dp"
+            android:padding="2dp" />
+        <EditText
+            android:inputType="number"
+            android:layout_width="82.5dp"
+            android:layout_height="match_parent"
+            android:id="@+id/editText1"
+            android:layout_margin="2dp"
+            android:gravity="center"
+            android:textSize="14dp"
+            android:textColor="@color/black"
+            android:layout_toRightOf="@id/textView3"
+            android:text="123" />
+        <Button
+            android:text="Generate"
+            android:layout_width="119.5dp"
+            android:layout_height="match_parent"
+            android:id="@+id/button1"
+            android:textSize="14dp"
+            android:gravity="center"
+            android:layout_gravity="right"
+            android:layout_marginRight="2dp"
+            android:textColor="@color/black"
+            android:background="#FFFFFFE1"
+            android:layout_alignParentRight="true" />
+    </RelativeLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:id="@+id/lytOptionExpand"
+        android:layout_below="@id/lyt2"
+        android:clickable="true"
+        android:layout_marginTop="10dp">
+        <ImageView
+            android:src="@drawable/expand"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/imageView1" />
+        <TextView
+            android:text="Characters Options"
+            android:layout_width="163.5dp"
+            android:layout_height="match_parent"
+            android:id="@+id/textView6"
+            android:textColor="@color/black"
+            android:gravity="center_vertical"
+            android:textSize="12dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="337.0dp"
+        android:id="@+id/lytOptions"
+        android:layout_below="@id/lytOptionExpand"
+        android:layout_marginTop="10dp">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="32.0dp"
+            android:id="@+id/linearLayout6">
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/switch2" />
+            <TextView
+                android:text="Text"
+                android:layout_width="139.0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/textView7" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="32.0dp"
+            android:id="@+id/linearLayout6">
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/switch1" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="32.0dp"
+            android:id="@+id/linearLayout6">
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/switch3" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="32.0dp"
+            android:id="@+id/linearLayout6">
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/switch4" />
+        </LinearLayout>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:id="@+id/lytResult"
+        android:layout_alignParentBottom="true">
+        <TextView
+            android:text="Results:"
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
+            android:id="@+id/textView4"
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            android:gravity="center_vertical"
+            android:layout_margin="2dp"
+            android:padding="2dp" />
+        <TextView
+            android:text="Text"
+            android:layout_width="169.0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/textView5"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            android:textIsSelectable="true"
+            android:layout_toRightOf="@id/textView4" />
+        <Button
+            android:text="Copy"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/button2"
+            android:textSize="12dp"
+            android:textColor="@color/black"
+            android:layout_alignParentRight="true" />
+    </RelativeLayout>
+</RelativeLayout>

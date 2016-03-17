@@ -5,18 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PasswordGenerator.WPF"
         mc:Ignorable="d"
-        Title="PasswordGenerator" Width="380" WindowStartupLocation="CenterScreen" d:DesignHeight="241" Height="500" SizeToContent="Width" ResizeMode="NoResize" HorizontalContentAlignment="Center">
-    <StackPanel VerticalAlignment="Top">
-        <DockPanel Margin="10">
-            <Label Content="Please enter some words:" Width="156" FontWeight="Bold" />
+        Title="PasswordGenerator" Width="380" WindowStartupLocation="CenterScreen" Height="450" SizeToContent="Width" ResizeMode="NoResize" HorizontalContentAlignment="Center">
+    <DockPanel>
+        <DockPanel Margin="10" DockPanel.Dock="Top">
+            <Label Content="Keywords:" Width="156" FontWeight="Bold" />
             <PasswordBox  x:Name="txtKeywords" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" PasswordChar="☆" />
         </DockPanel>
-        <DockPanel Margin="10">
+        <DockPanel Margin="10" DockPanel.Dock="Top">
             <Label Content="Password length:" Width="156" FontWeight="Bold"/>
             <TextBox x:Name="txtLength" MinWidth="10" Width="45" MaxLength="5" MaxLines="1" TextOptions.TextHintingMode="Fixed" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
             <Button x:Name="btnGenerate" Width="100px" Content="Generate" HorizontalAlignment="Right" Background="#FFFFFFE1" Click="btnGenerate_Click"/>
         </DockPanel>
-        <Expander Header="Characters Options" Margin="10,5" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+        <Expander Header="Characters Options" Margin="10,5" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" DockPanel.Dock="Top">
             <Border BorderThickness="1" BorderBrush="#FFB4B4B4" Margin="1,5">
                 <StackPanel VerticalAlignment="Top" Margin="1">
                     <Border BorderThickness="0,0,0,1" BorderBrush="#FFB4B4B4">
@@ -98,10 +98,10 @@
                 </StackPanel>
             </Border>
         </Expander>
-        <StackPanel Orientation="Horizontal" Margin="10 0">
+        <StackPanel Orientation="Horizontal" Margin="10,0,10,10" DockPanel.Dock="Bottom" MaxHeight="25" VerticalAlignment="Bottom">
             <Label FontWeight="Bold">Results:</Label>
             <Label x:Name="lblResult" Width="250" FontSize="14" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
             <Button x:Name="btnCopy" Content="Copy" Margin="10 0" Click="btnCopy_Click"/>
         </StackPanel>
-    </StackPanel>
+    </DockPanel>
 </Window>
