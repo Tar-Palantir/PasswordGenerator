@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Text;
 using PasswordGenerator.Core.Enums;
 using PasswordGenerator.Core.Models;
+using PCLCrypto;
 
 namespace PasswordGenerator.Core
 {
@@ -210,8 +210,9 @@ namespace PasswordGenerator.Core
 
             //获取信息摘要
             List<byte> n16List = new List<byte>();
-            var md5 = MD5.Create();
-            var n16 = md5.ComputeHash(wordBytes);
+            
+            var md5 = WinRTCrypto.HashAlgorithmProvider.OpenAlgorithm(HashAlgorithm.Md5);
+            var n16 = md5.HashData(wordBytes);
 
             var n16Count = length / 16;
             var offset = (n16Count + 1) * 16 - length;
@@ -223,7 +224,7 @@ namespace PasswordGenerator.Core
             {
                 extWord += length + modeState.ToUpperInvariant();
                 var extWordBytes = Encoding.UTF8.GetBytes(extWord);
-                n16List.AddRange(md5.ComputeHash(extWordBytes));
+                n16List.AddRange(md5.HashData(extWordBytes));
             }
 
             //将列表进行错位相加，取重合部分，重合长度为密码长度
