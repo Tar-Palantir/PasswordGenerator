@@ -57,7 +57,7 @@
                                     <RadioButton IsChecked="True" DockPanel.Dock="Right" HorizontalAlignment="Right" Margin="0,0,10,0" GroupName="Signals" Checked="RadioCheckedChange" >Optional</RadioButton>
                                 </DockPanel>
                             </DockPanel>
-                            <Grid x:Name="gridSignals" Height="65" Button.Click="RadioCheckedChange" Visibility="Collapsed">
+                            <Grid x:Name="gridSignals" Height="65" Button.Click="RadioCheckedChange" Visibility="Collapsed" >
                                 <Grid.RowDefinitions>
                                     <RowDefinition/>
                                     <RowDefinition/>

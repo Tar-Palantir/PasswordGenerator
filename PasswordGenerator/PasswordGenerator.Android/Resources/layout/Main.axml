@@ -9,8 +9,7 @@
         android:layout_height="35dp"
         android:id="@+id/lyt1"
         android:layout_centerInParent="false"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="10dp">
+        android:layout_alignParentTop="true">
         <TextView
             android:text="Keywords:"
             android:layout_width="120.0dp"
@@ -21,25 +20,24 @@
             android:textSize="14dp"
             android:layout_margin="2dp"
             android:padding="2dp" />
-        <TextView
-            android:text="Medium Text"
+        <EditText
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/textView2"
+            android:id="@+id/txtKeywords"
             android:textSize="14dp"
-            android:inputType="text"
+            android:inputType="textPassword"
             android:layout_margin="2dp"
             android:gravity="center"
             android:password="true"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:padding="2dp" />
     </LinearLayout>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:id="@+id/lyt2"
-        android:layout_below="@id/lyt1"
-        android:layout_marginTop="10dp">
+        android:layout_below="@id/lyt1">
         <TextView
             android:text="Password length:"
             android:layout_width="120.0dp"
@@ -54,18 +52,18 @@
             android:inputType="number"
             android:layout_width="82.5dp"
             android:layout_height="match_parent"
-            android:id="@+id/editText1"
+            android:id="@+id/txtLength"
             android:layout_margin="2dp"
             android:gravity="center"
             android:textSize="14dp"
             android:textColor="@color/black"
             android:layout_toRightOf="@id/textView3"
-            android:text="123" />
+            android:padding="2dp" />
         <Button
             android:text="Generate"
             android:layout_width="119.5dp"
             android:layout_height="match_parent"
-            android:id="@+id/button1"
+            android:id="@+id/btnGenerate"
             android:textSize="14dp"
             android:gravity="center"
             android:layout_gravity="right"
@@ -81,12 +79,12 @@
         android:id="@+id/lytOptionExpand"
         android:layout_below="@id/lyt2"
         android:clickable="true"
-        android:layout_marginTop="10dp">
+        android:background="@drawable/rect_frame_gray">
         <ImageView
-            android:src="@drawable/expand"
+            android:src="@drawable/collapse"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:id="@+id/imageView1" />
+            android:id="@+id/imgOptions" />
         <TextView
             android:text="Characters Options"
             android:layout_width="163.5dp"
@@ -99,157 +97,352 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="337.0dp"
+        android:layout_height="wrap_content"
         android:id="@+id/lytOptions"
         android:layout_below="@id/lytOptionExpand"
         android:layout_marginTop="10dp">
-        <LinearLayout
-            android:orientation="horizontal"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="32.0dp"
-            android:id="@+id/linearLayout6">
+            android:id="@+id/rlytUpper"
+            android:background="@drawable/rect_frame_gray"
+            android:layout_marginBottom="2dp">
             <CheckBox
                 android:text="Upper Words(ABC...XYZ)"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:id="@+id/checkBox1"
+                android:id="@+id/cbUpper"
                 android:checked="true"
                 android:textColor="@color/black"
                 android:textSize="12dp" />
             <RadioGroup
-                android:layout_width="match_parent"
+                android:layout_width="180dp"
                 android:layout_height="match_parent"
-                android:id="@+id/radioGroup1"
+                android:id="@+id/rGroupUpper"
                 android:orientation="horizontal"
-                android:gravity="center_vertical">
+                android:gravity="center_vertical"
+                android:layout_alignParentRight="true">
                 <RadioButton
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:checked="true"
                     android:text="Optional"
-                    android:id="@+id/radioButton1"
+                    android:id="@+id/rbUpper_Optional"
                     android:textColor="@color/black"
                     android:textSize="12dp" />
                 <RadioButton
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:text="Must"
-                    android:id="@+id/radioButton2"
+                    android:id="@+id/rbUpper_Must"
                     android:textColor="@color/black"
                     android:textSize="12dp" />
             </RadioGroup>
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="horizontal"
+        </RelativeLayout>
+        <RelativeLayout
             android:minWidth="25px"
             android:minHeight="25px"
             android:layout_width="match_parent"
             android:layout_height="32.0dp"
-            android:id="@+id/linearLayout6">
+            android:id="@+id/rlytLower"
+            android:background="@drawable/rect_frame_gray"
+            android:layout_marginBottom="2dp">
             <CheckBox
                 android:text="Lower Words(abc...xyz)"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:id="@+id/checkBox2"
+                android:id="@+id/cbLower"
                 android:textColor="@color/black"
-                android:textSize="12dp" />
+                android:textSize="12dp"
+                android:checked="true" />
             <RadioGroup
-                android:layout_width="match_parent"
+                android:layout_width="180dp"
                 android:layout_height="match_parent"
-                android:id="@+id/radioGroup1"
+                android:id="@+id/rGroupLower"
                 android:orientation="horizontal"
-                android:gravity="center_vertical">
+                android:gravity="center_vertical"
+                android:layout_alignParentRight="true">
                 <RadioButton
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:checked="true"
                     android:text="Optional"
-                    android:id="@+id/radioButton1"
+                    android:id="@+id/rbLower_Optional"
                     android:textColor="@color/black"
                     android:textSize="12dp" />
                 <RadioButton
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:text="Must"
-                    android:id="@+id/radioButton2"
+                    android:id="@+id/rbLower_Must"
                     android:textColor="@color/black"
                     android:textSize="12dp" />
             </RadioGroup>
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="horizontal"
+        </RelativeLayout>
+        <RelativeLayout
             android:minWidth="25px"
             android:minHeight="25px"
             android:layout_width="match_parent"
             android:layout_height="32.0dp"
-            android:id="@+id/linearLayout6">
+            android:id="@+id/rlytNumber"
+            android:background="@drawable/rect_frame_gray"
+            android:layout_marginBottom="2dp">
             <CheckBox
                 android:text="Numbers(0123456789)"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:id="@+id/checkBox3"
+                android:id="@+id/cbNum"
                 android:textColor="@color/black"
-                android:textSize="12dp" />
+                android:textSize="12dp"
+                android:checked="true" />
             <RadioGroup
-                android:layout_width="match_parent"
+                android:layout_width="180dp"
                 android:layout_height="match_parent"
-                android:id="@+id/radioGroup1"
+                android:id="@+id/rGroupNum"
                 android:orientation="horizontal"
-                android:gravity="center_vertical">
+                android:gravity="center_vertical"
+                android:layout_alignParentRight="true">
                 <RadioButton
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:checked="true"
                     android:text="Optional"
-                    android:id="@+id/radioButton1"
+                    android:id="@+id/rbNum_Optional"
                     android:textColor="@color/black"
                     android:textSize="12dp" />
                 <RadioButton
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:text="Must"
-                    android:id="@+id/radioButton2"
+                    android:id="@+id/rbNum_Must"
                     android:textColor="@color/black"
                     android:textSize="12dp" />
             </RadioGroup>
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="horizontal"
+        </RelativeLayout>
+        <RelativeLayout
             android:minWidth="25px"
             android:minHeight="25px"
             android:layout_width="match_parent"
             android:layout_height="32.0dp"
-            android:id="@+id/linearLayout6">
+            android:id="@+id/rlytSignals"
+            android:background="@drawable/rect_frame_gray">
             <CheckBox
                 android:text="Signals"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:id="@+id/checkBox4"
+                android:id="@+id/cbSignals"
                 android:textColor="@color/black"
                 android:textSize="12dp" />
             <RadioGroup
-                android:layout_width="match_parent"
+                android:layout_width="180dp"
                 android:layout_height="match_parent"
-                android:id="@+id/radioGroup1"
+                android:id="@+id/rGroupSignals"
                 android:orientation="horizontal"
-                android:gravity="center_vertical">
+                android:gravity="center_vertical"
+                android:layout_alignParentRight="true"
+                android:visibility="gone">
                 <RadioButton
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:checked="true"
                     android:text="Optional"
-                    android:id="@+id/radioButton1"
+                    android:id="@+id/rbSignals_Optional"
                     android:textColor="@color/black"
                     android:textSize="12dp" />
                 <RadioButton
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:text="Must"
-                    android:id="@+id/radioButton2"
+                    android:id="@+id/rbSignals_Must"
                     android:textColor="@color/black"
                     android:textSize="12dp" />
             </RadioGroup>
+        </RelativeLayout>
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tlytSignals"
+            android:stretchColumns="0,1"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:visibility="gone">
+            <TableRow>
+                <ToggleButton
+                    android:text="."
+                    android:textOff="."
+                    android:textOn="."
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    android:checked="true"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/tbtn1" />
+                <ToggleButton
+                    android:text="!"
+                    android:textOff="!"
+                    android:textOn="!"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    android:checked="true"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/tbtn2" />
+                <ToggleButton
+                    android:text="@string/AtSignal"
+                    android:textOff="@string/AtSignal"
+                    android:textOn="@string/AtSignal"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    android:checked="true"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/tbtn3" />
+                <ToggleButton
+                    android:text="#"
+                    android:textOff="#"
+                    android:textOn="#"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    android:checked="true"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/tbtn4" />
+            </TableRow>
+            <TableRow>
+                <ToggleButton
+                    android:text="$"
+                    android:textOff="$"
+                    android:textOn="$"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    android:checked="true"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/tbtn5" />
+                <ToggleButton
+                    android:text="%"
+                    android:textOff="%"
+                    android:textOn="%"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    android:checked="true"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/tbtn6" />
+                <ToggleButton
+                    android:text="^"
+                    android:textOff="^"
+                    android:textOn="^"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    android:checked="true"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/tbtn7" />
+                <ToggleButton
+                    android:text="&amp;"
+                    android:textOff="&amp;"
+                    android:textOn="&amp;"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    android:checked="true"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/tbtn8" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent">
+                <ToggleButton
+                    android:text="*"
+                    android:textOff="*"
+                    android:textOn="*"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    android:checked="true"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/tbtn9" />
+                <ToggleButton
+                    android:text="+"
+                    android:textOff="+"
+                    android:textOn="+"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    android:checked="true"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/tbtn10" />
+                <ToggleButton
+                    android:text="="
+                    android:textOff="="
+                    android:textOn="="
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    android:checked="true"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/tbtn11" />
+                <ToggleButton
+                    android:text="@string/QuestionSignal"
+                    android:textOff="@string/QuestionSignal"
+                    android:textOn="@string/QuestionSignal"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    android:checked="true"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/tbtn12" />
+            </TableRow>
+        </TableLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="38.5dp"
+            android:id="@+id/linearLayout8">
+            <TextView
+                android:text="Current Simple Key:"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/textView7"
+                android:textColor="@color/black"
+                android:textSize="12dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/tvSimpleKey"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textAllCaps="true"
+                android:textSize="14dp" />
         </LinearLayout>
+        <RelativeLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="41.5dp"
+            android:id="@+id/linearLayout9">
+            <TextView
+                android:text="You can enter your simple key:"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/textView9"
+                android:textColor="@color/black"
+                android:textSize="12dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp" />
+            <EditText
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="74.5dp"
+                android:layout_height="match_parent"
+                android:id="@+id/txtSimpleKey"
+                android:textSize="14dp"
+                android:textColor="@color/black"
+                android:width="50dp"
+                android:gravity="center"
+                android:layout_margin="2dp"
+                android:layout_toRightOf="@id/textView9"
+                android:textAllCaps="true"
+                android:maxLength="5" />
+            <Button
+                android:text="Submit"
+                android:layout_width="103.5dp"
+                android:layout_height="match_parent"
+                android:id="@+id/btnSubmit"
+                android:textColor="@color/black"
+                android:textSize="12dp"
+                android:layout_alignParentRight="true" />
+        </RelativeLayout>
     </LinearLayout>
     <RelativeLayout
         android:layout_width="match_parent"
@@ -267,10 +460,9 @@
             android:layout_margin="2dp"
             android:padding="2dp" />
         <TextView
-            android:text="Text"
             android:layout_width="169.0dp"
             android:layout_height="match_parent"
-            android:id="@+id/textView5"
+            android:id="@+id/tvResult"
             android:gravity="center"
             android:textColor="@color/black"
             android:textSize="14dp"
@@ -280,7 +472,7 @@
             android:text="Copy"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:id="@+id/button2"
+            android:id="@+id/btnCopy"
             android:textSize="12dp"
             android:textColor="@color/black"
             android:layout_alignParentRight="true" />

@@ -63,21 +63,21 @@ namespace PasswordGenerator.WPF
                 switch (modeState.RangeType)
                 {
                     case EnumValueRangeType.UpperWord:
-                        ((RadioButton)dpUpper.Children[0]).IsChecked = ((int)modeState.State & 0x3) == 0x3;
-                        cbUpper.IsChecked = ((int)modeState.State & 0x1) == 0x1;
+                        ((RadioButton)dpUpper.Children[0]).IsChecked = modeState.State == EnumChooseState.Must;
+                        cbUpper.IsChecked = modeState.State != EnumChooseState.None;
                         break;
                     case EnumValueRangeType.LowerWord:
-                        ((RadioButton)dpLower.Children[0]).IsChecked = ((int)modeState.State & 0x3) == 0x3;
-                        cbLower.IsChecked = ((int)modeState.State & 0x1) == 0x1;
+                        ((RadioButton)dpLower.Children[0]).IsChecked = modeState.State == EnumChooseState.Must;
+                        cbLower.IsChecked = modeState.State != EnumChooseState.None;
                         break;
                     case EnumValueRangeType.Number:
-                        ((RadioButton)dpLower.Children[0]).IsChecked = ((int)modeState.State & 0x3) == 0x3;
-                        cbLower.IsChecked = ((int)modeState.State & 0x1) == 0x1;
+                        ((RadioButton)dpLower.Children[0]).IsChecked = modeState.State == EnumChooseState.Must;
+                        cbLower.IsChecked = modeState.State != EnumChooseState.None;
                         break;
                     case EnumValueRangeType.Signal:
-                        ((RadioButton)dpSignal.Children[0]).IsChecked = ((int)modeState.State & 0x3) == 0x3;
-                        cbSignal.IsChecked = ((int)modeState.State & 0x1) == 0x1;
-                        gridSignals.Visibility = cbSignal.IsChecked.GetValueOrDefault() ? Visibility.Visible : Visibility.Collapsed;
+                        ((RadioButton)dpSignal.Children[0]).IsChecked = modeState.State == EnumChooseState.Must;
+                        cbSignal.IsChecked = modeState.State != EnumChooseState.None;
+                        gridSignals.Visibility = modeState.State == EnumChooseState.None ? Visibility.Collapsed : Visibility.Visible;
 
                         var chosenSignals = Generator.GetSignalsFromOct(modeStateOct);
                         foreach (ToggleButton child in gridSignals.Children)
@@ -159,7 +159,7 @@ namespace PasswordGenerator.WPF
         #endregion
 
         #region 私有方法
-        
+
         /// <summary>
         /// 刷新当前模式
         /// </summary>
@@ -222,7 +222,7 @@ namespace PasswordGenerator.WPF
             }
             sb.Append(octStr);
         }
-        
+
         #endregion
 
     }
