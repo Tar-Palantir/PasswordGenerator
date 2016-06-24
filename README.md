@@ -11,7 +11,7 @@
 
 Release 1.0
 * [Windows 绿色版](https://github.com/Tar-Palantir/PasswordGenerator/raw/master/Download/win/PasswordGenerator_1.0.zip)
-* [Android 安装包](https://github.com/Tar-Palantir/PasswordGenerator/raw/master/Download/android/PasswordGenerator.Android-1.0.apk)
+* [Android 安装包](https://github.com/Tar-Palantir/PasswordGenerator/raw/master/Download/android/PasswordGenerator.Android-1.01.apk)
 
 ## 结构说明
 
