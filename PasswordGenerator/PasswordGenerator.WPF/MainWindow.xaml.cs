@@ -71,8 +71,8 @@ namespace PasswordGenerator.WPF
                         cbLower.IsChecked = modeState.State != EnumChooseState.None;
                         break;
                     case EnumValueRangeType.Number:
-                        ((RadioButton)dpLower.Children[0]).IsChecked = modeState.State == EnumChooseState.Must;
-                        cbLower.IsChecked = modeState.State != EnumChooseState.None;
+                        ((RadioButton)dpNum.Children[0]).IsChecked = modeState.State == EnumChooseState.Must;
+                        cbNum.IsChecked = modeState.State != EnumChooseState.None;
                         break;
                     case EnumValueRangeType.Signal:
                         ((RadioButton)dpSignal.Children[0]).IsChecked = modeState.State == EnumChooseState.Must;
