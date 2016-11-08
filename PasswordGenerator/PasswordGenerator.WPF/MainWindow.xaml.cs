@@ -45,7 +45,8 @@ namespace PasswordGenerator.WPF
         private void btnCopy_Click(object sender, RoutedEventArgs e)
         {
             //复制
-            Clipboard.SetText(lblResult.Content.ToString());
+            //Clipboard.SetText(lblResult.Content.ToString());
+            Clipboard.SetDataObject(lblResult.Content.ToString());
             MessageBox.Show("已复制", "复制成功", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
