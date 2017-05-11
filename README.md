@@ -11,7 +11,7 @@
 
 Release 1.0
 * [Windows 绿色版](https://github.com/Tar-Palantir/PasswordGenerator/blob/master/Download/win/PasswordGenerator_1.0.16313.10.zip)
-* [Android 安装包](https://github.com/Tar-Palantir/PasswordGenerator/raw/master/Download/android/PasswordGenerator.Android-1.02.apk)
+* [Android 安装包](https://github.com/Tar-Palantir/PasswordGenerator/raw/master/Download/android/PasswordGenerator.Android-1.03.apk)
 
 ## 结构说明
 
@@ -40,9 +40,9 @@ Windows程序
 Android程序
 
 #### Api版本信息
-* 编译版本level19（Android 4.4）  
-* 最小版本level15（Android 4.0.3）  
-* 目标版本level19（Android 4.4）
+* 编译版本level19（Android 7.1）  
+* 最小版本level15（Android 5.0）  
+* 目标版本level19（Android 7.1）
 
 #### 框架支持
 * ARM
